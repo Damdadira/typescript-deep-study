@@ -16,6 +16,7 @@ color: 'yellow';
 // color = 'green'; //에러 발생
 
 
+
 /**함수에서 타입 지정 */
 function sum(x: number, y: number): number{
   return x+y;
@@ -31,3 +32,39 @@ const total = sumArray([1,2,3,4,5]);
 function returnNothing(): void{
   console.log('hihi');
 }
+
+
+
+/**interface 사용해보기 */
+interface Shape{
+  getArea(): number;
+}
+
+//Circle이 Shape의 조건을 충족하겠다는것을 명시
+class Circle implements Shape{
+  radius: number;
+
+  constructor(radius: number){
+    this.radius = radius;
+  }
+
+  getArea() {
+    return this.radius * this.radius * Math.PI;
+  }
+}
+
+class Ractangle implements Shape{
+  width: number;
+  height: number;
+
+  constructor(width: number, height: number){
+    this.width = width;
+    this.height  = height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+// const sahpe: Shape[]
