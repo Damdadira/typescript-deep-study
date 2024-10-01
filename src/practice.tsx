@@ -1,4 +1,4 @@
-/**타입 지정해서 선언*/
+/** 타입 지정해서 선언 */
 let count = 0;
 count += 1;
 // count = '갑자기 문자열' //에러 발생
@@ -17,7 +17,7 @@ color: 'yellow';
 
 
 
-/**함수에서 타입 지정 */
+/** 함수에서 타입 지정 */
 function sum(x: number, y: number): number{
   return x+y;
 }
@@ -35,7 +35,7 @@ function returnNothing(): void{
 
 
 
-/**interface 사용해보기 */
+/** interface 사용해보기 */
 interface Shape{
   getArea(): number;
 }
@@ -74,7 +74,7 @@ shapes.forEach(shape => {
 
 
 
-/**일반 객체를 interface로 타입 설정하기 */
+/** 일반 객체를 interface로 타입 설정하기 */
 interface Person{
   name: string;
   age?: number;
@@ -95,3 +95,32 @@ const expert: Developer = {
 }
 
 const people: Person[] = [person, expert];
+
+
+
+/** type alias(별칭) 사용하기 */
+type Person2 = {
+  name: string;
+  age?: number;
+}
+
+//& -> 두개 이상의 타입들을 합쳐줌
+type Developer2 = Person2 & {
+  skills: string[]
+}
+
+const person2: Person2 = {
+  name: '김사람'
+}
+
+const expert2: Developer2 = {
+  name: '김개발',
+  skills: ['javascript', 'react']
+}
+
+type People2 = Person2[]; //Person[]를 People이라는 타입으로 사용 가능
+const people2: People2 = [person2, expert2];
+
+type Color2 = 'red' | 'orange' | 'yellow';
+const color2: Color2 = 'red';
+const colors2: Color[] = ['red', 'orange'];
