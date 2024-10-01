@@ -67,4 +67,31 @@ class Ractangle implements Shape{
   }
 }
 
-// const sahpe: Shape[]
+const shapes: Shape[] = [new Circle(5), new Ractangle(10,5)];
+shapes.forEach(shape => {
+  console.log(shape.getArea())
+})
+
+
+
+/**일반 객체를 interface로 타입 설정하기 */
+interface Person{
+  name: string;
+  age?: number;
+}
+
+interface Developer extends Person{
+  skills: string[];
+}
+
+const person: Person = {
+  name: '홍길동',
+  age: 20
+}
+
+const expert: Developer = {
+  name: '강감찬',
+  skills: ['javascript', 'react']
+}
+
+const people: Person[] = [person, expert];
