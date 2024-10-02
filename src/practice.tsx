@@ -136,9 +136,50 @@ function merge<A, B>(a: A, b: B): any {
 }
 const merged = merge({foo: 1}, {bar: 1});
 
-function wrap<T>(param: T){
+function wrap<T>(param: T) {
   return {
     param
   }
 }
 const wrapped = wrap(10);
+
+
+
+/** interface에서 generics 사용하기 */
+interface Items<T> {
+  list: T[];
+}
+
+const items: Items<string> = {
+  list: ['a', 'b', 'c']
+}
+
+
+
+/** type에서 generics 사용하기 */
+type Itmes2<T> {
+  list: T[];
+}
+
+const items2: Itmes2<string> = {
+  list: ['a', 'b', 'c']
+}
+
+
+
+/** 클래스에서 generics 사용하기 */
+class Queue<T> {
+  list: T[] = [];
+  get length() {
+    return this.list.length;
+  }
+  enqueue(item: T) {
+    this.list.push(item);
+  }
+  dequeue() {
+    return this.list.shift();
+  }
+}
+
+const queue = new Queue<number>();
+console.log(queue.enqueue(0))
