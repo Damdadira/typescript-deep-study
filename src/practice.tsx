@@ -124,3 +124,21 @@ const people2: People2 = [person2, expert2];
 type Color2 = 'red' | 'orange' | 'yellow';
 const color2: Color2 = 'red';
 const colors2: Color[] = ['red', 'orange'];
+
+
+
+/** 함수에서 Generics 사용하기 */
+function merge<A, B>(a: A, b: B): any {
+  return{
+    ...a,
+    ...b
+  }
+}
+const merged = merge({foo: 1}, {bar: 1});
+
+function wrap<T>(param: T){
+  return {
+    param
+  }
+}
+const wrapped = wrap(10);
