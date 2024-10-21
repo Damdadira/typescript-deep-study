@@ -3,6 +3,8 @@ import Counter from './Counter'
 import MyForm from './MyForm'
 import Counter2 from './Counter2'
 import ReducerSample from './ReducerSample'
+import { SampleProvider } from './SampleContext'
+import ReducerSample2 from './ReducerSample2'
 
 function App() {
   const onClick = (name: string) => {
@@ -27,6 +29,10 @@ function App() {
       <Counter2></Counter2>
       <hr/>
       <ReducerSample></ReducerSample>
+      <hr/>
+      <SampleProvider>
+        <ReducerSample2></ReducerSample2>
+      </SampleProvider>
       <hr/>
     </>
   )
