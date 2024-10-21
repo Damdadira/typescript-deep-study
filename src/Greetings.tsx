@@ -9,11 +9,11 @@ export default function Greetings({name, mark, optional, onClick}: GreetingsProp
   const handleClick = () => onClick(name);
 
   return(
-    <div>
+    <div className='text-xl'>
       Hello, {name} {mark}
       {optional && <p>{optional}</p>}
-      <div>
-        <button onClick={handleClick}>Click Me</button>
+      <div className='mt-5'>
+        <button className='bg-cyan-100 text-cyan-500 p-4' onClick={handleClick}>Click Me</button>
       </div>
     </div>
   )

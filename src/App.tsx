@@ -1,12 +1,15 @@
 import Greetings from './Greetings'
 
 function App() {
+  const onClick = (name: string) => {
+    console.log(`${name} say hello`)
+  }
   return (
     <>
-      <div className='bg-green-400'>
+      <div className='bg-cyan-300 text-cyan-700 mb-3'>
         <div className='text-3xl font-bold underline'>hi</div>
       </div>
-      <Greetings name='hi'></Greetings>
+      <Greetings name='hi' onClick={onClick}></Greetings>
     </>
   )
 }
