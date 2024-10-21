@@ -58,16 +58,16 @@ export default function ReducerSample() {
   return(
     <div className='my-5'>
       <p>
-        <code>count: </code> {state.count}
+        <code style={{color: '#bd88b1'}}>count: </code> {state.count}
       </p>
       <p>
-        <code>text: </code> {state.text}
+        <code style={{color: '#bd88b1'}}>text: </code> {state.text}
       </p>
       <p>
-        <code>color: </code> {state.color}
+        <code style={{color: '#bd88b1'}}>color: </code> {state.color}
       </p>
       <p>
-        <code>isGood: </code> {state.isGood ? 'true' : false}
+        <code style={{color: '#bd88b1'}}>isGood: </code> {state.isGood ? 'true' : false}
       </p>
       <div className='mt-4'>
         <button style={{background: '#e98eb1', color: '#fff', padding: '4px 12px', marginRight: '0.5rem'}} onClick={setCount}>SET_COUNT</button>

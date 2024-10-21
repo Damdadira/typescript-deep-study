@@ -16,9 +16,9 @@ function App() {
   return (
     <>
       <div className='bg-cyan-300 text-cyan-700'>
-        <div className='text-3xl font-bold underline'>hi</div>
+        <div className='text-3xl font-bold underline'><code>hi, hello</code></div>
       </div>
-      <Greetings name='hi' onClick={onClick}></Greetings>
+      <Greetings name='ya' onClick={onClick}></Greetings>
       <hr/>
       <Counter></Counter>
       <hr/>
