@@ -1,13 +1,15 @@
 import Greetings from './Greetings'
 import Counter from './Counter'
 import MyForm from './MyForm'
+import Counter2 from './Counter2'
+import ReducerSample from './ReducerSample'
 
 function App() {
   const onClick = (name: string) => {
     console.log(`${name} say hello`)
   }
 
-  const onSubmit = (form: {name: string; description: string }) => {
+  const onSubmit = (form: { name: string; description: string }) => {
     console.log(form)
   }
 
@@ -21,6 +23,11 @@ function App() {
       <Counter></Counter>
       <hr/>
       <MyForm onSubmit={onSubmit}></MyForm>
+      <hr/>
+      <Counter2></Counter2>
+      <hr/>
+      <ReducerSample></ReducerSample>
+      <hr/>
     </>
   )
 }
