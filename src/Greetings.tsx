@@ -9,7 +9,7 @@ export default function Greetings({name, mark, optional, onClick}: GreetingsProp
   const handleClick = () => onClick(name);
 
   return(
-    <div className='text-xl'>
+    <div className='text-xl my-5'>
       Hello, {name} {mark}
       {optional && <p>{optional}</p>}
       <div className='mt-5'>
