@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 type MyFormProps = {
   onSubmit: (form: { name: string; description: string }) => void;
@@ -12,9 +12,17 @@ export default function MyForm({ onSubmit }: MyFormProps){
 
   const { name, description } = form;
 
-  //e값을 무엇으로 설정할지 모르기 때문에 any로 설정
-  const onChange = (e: any) => {};
-  const handleSubmit = (e:any) => {};
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    
+    setForm({ ...form, [name]: value });
+  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    onSubmit(form);
+    setForm({ name: '', description: '' }); //초기화
+  };
 
   return(
     <form className='my-5' onSubmit={handleSubmit}>

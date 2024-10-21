@@ -6,6 +6,11 @@ function App() {
   const onClick = (name: string) => {
     console.log(`${name} say hello`)
   }
+
+  const onSubmit = (form: {name: string; description: string }) => {
+    console.log(form)
+  }
+
   return (
     <>
       <div className='bg-cyan-300 text-cyan-700'>
@@ -15,7 +20,7 @@ function App() {
       <hr/>
       <Counter></Counter>
       <hr/>
-      <MyForm></MyForm>
+      <MyForm onSubmit={onSubmit}></MyForm>
     </>
   )
 }
