@@ -1,5 +1,6 @@
 import Greetings from './Greetings'
 import Counter from './Counter'
+import MyForm from './MyForm'
 
 function App() {
   const onClick = (name: string) => {
@@ -14,6 +15,7 @@ function App() {
       <hr/>
       <Counter></Counter>
       <hr/>
+      <MyForm></MyForm>
     </>
   )
 }
