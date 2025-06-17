@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
+# TypeScript + React Study
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 📚 학습 내용
+#### 1. Typescript 기초 연습
+- 기본 타입(string, number, boolean, array)
+- 여러 타입(string | undefined, number | null)
+- 지정된 값 타입('red' | 'orange' | 'yellow')
+- 함수에 타입 지정
+- Interface
+- Type으로 별칭 만들고, 두 타입 합치기(교집합 타입)
+- Generics
 
-Currently, two official plugins are available:
+#### 2. React 컴포넌트 타입
+- Props에 타입 지정(null인 경우도)
+- 함수 타입
+- 이벤트 핸들러 타입 지정
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### 3. 상태(State) 타입
+- useState, useReducer에 타입 지정
 
-## Expanding the ESLint configuration
+#### 4. Context API 사용
+- Context에 타입 추가
+- 커스텀 훅 추가
+<br/>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 🛠 기술 스택
+<div>
+  <img src="https://img.shields.io/badge/React-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" />&nbsp;
+  <img src="https://img.shields.io/badge/Typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white" />&nbsp;
+  <img src="https://img.shields.io/badge/Context--Api-000000?style=flat-square&logoColor=white" />&nbsp;
+  <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" />&nbsp;
+  <img src="https://img.shields.io/badge/Vite-%23646CFF.svg?style=flat-square&logo=vite&logoColor=white" />&nbsp;
+</div>
+<br/>
 
-- Configure the top-level `parserOptions` property like this:
+### 🎯 실행 방법
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Node.js 18 이상 권장**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+```bash
+# 패키지 설치
+npm install   # 또는 npm i
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+# 개발 서버 실행
+npm run dev
 ```
